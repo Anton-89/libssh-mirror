@@ -27,7 +27,7 @@
 #include <string.h>
 #include <stdlib.h>
 //#include <zlib.h>
-#include "zlib/include/zlib.h"
+#include <zlib/include/zlib.h>
 
 #include "libssh/priv.h"
 #include "libssh/buffer.h"

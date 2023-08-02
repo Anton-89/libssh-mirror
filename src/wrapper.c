@@ -40,7 +40,7 @@
 
 #ifdef WITH_ZLIB
 //#include <zlib.h>
-#include "zlib/include/zlib.h"
+#include <zlib/include/zlib.h>
 #endif
 
 #include "libssh/priv.h"
