@@ -13,7 +13,7 @@
 
 Why not ? :) I've began to work on my own implementation of the ssh protocol
 because i didn't like the currently public ones.
-Not any allowed you to import and use the functions as a powerful library, 
+Not any allowed you to import and use the functions as a powerful library,
 and so i worked on a library-based SSH implementation which was non-existing
 in the free and open source software world.
 
@@ -32,6 +32,14 @@ If you ask yourself how to compile libssh, please read INSTALL before anything.
 -_-_-_-_-_-_
 
 https://www.libssh.org
+
+3* Compile with CMake on Windows ?
+Add options.
+
+ZLIB_INCLUDE_DIR = zlib/include
+ZLIB_LIBRARY = zlib/lib/zlib.lib
+OPENSSL_ROOT_DIR = openssl
+
 
 4* Contributing
 -_-_-_-_-_-_-_-_-_
