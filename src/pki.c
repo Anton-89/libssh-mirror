@@ -862,9 +862,9 @@ int ssh_pki_import_privkey_base64(const char *b64_key,
         return SSH_ERROR;
     }
 
-    SSH_LOG(SSH_LOG_INFO,
-            "Trying to decode privkey passphrase=%s",
-            passphrase ? "true" : "false");
+    //SSH_LOG(SSH_LOG_INFO,
+    //        "Trying to decode privkey passphrase=%s",
+    //        passphrase ? "true" : "false");
 
     /* Test for OpenSSH key format first */
     openssh_header = strstr(b64_key, OPENSSH_HEADER_BEGIN);

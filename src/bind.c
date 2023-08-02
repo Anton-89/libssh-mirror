@@ -587,7 +587,10 @@ int ssh_bind_accept(ssh_bind sshbind, ssh_session session)
         return SSH_ERROR;
     }
 
-    fd = accept(sshbind->bindfd, NULL, NULL);
+    struct sockaddr_in address;
+    int addrlen = sizeof(address);
+
+    fd = accept(sshbind->bindfd, (struct sockaddr *)&address, (socklen_t*)&addrlen);
     if (fd == SSH_INVALID_SOCKET) {
         char err_msg[SSH_ERRNO_MSG_MAX] = {0};
         if (errno == EINTR) {
@@ -602,6 +605,10 @@ int ssh_bind_accept(ssh_bind sshbind, ssh_session session)
         return SSH_ERROR;
     }
     rc = ssh_bind_accept_fd(sshbind, session, fd);
+
+    char* client_ip = inet_ntoa(address.sin_addr);
+    //printf("%d and %s\n", address.sin_addr.S_un.S_addr, client_ip);
+    sprintf(session->peer_address, "%s", client_ip);
 
     if (rc == SSH_ERROR) {
         CLOSE_SOCKET(fd);

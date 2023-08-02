@@ -108,7 +108,7 @@ struct ssh_common_struct {
 };
 
 struct ssh_session_struct {
-    char * peer_address;
+    char peer_address[48];
     struct ssh_common_struct common;
     struct ssh_socket_struct *socket;
     char *serverbanner;
