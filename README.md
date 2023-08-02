@@ -35,6 +35,13 @@ If you ask yourself how to compile libssh, please read INSTALL before anything.
 
 https://www.libssh.org
 
+# Compile with CMake on Windows ?
+Add options.
+
+ZLIB_INCLUDE_DIR = zlib/include
+ZLIB_LIBRARY = zlib/lib/zlib.lib
+OPENSSL_ROOT_DIR = openssl
+
 # Contributing
 
 Please read the file 'CONTRIBUTING.md' next to this README file. It explains
